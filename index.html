@@ -8,19 +8,27 @@
   <title>Personal Budget || Paulo da Silva</title>
 </head>
 <body>
+
+  <div class="video">
+    <video autoplay loop playsinline>
+      <source src="./video/video-bg.mp4" type="video/mp4">
+      Sorry, your browser doesn't support embedded videos.
+    </video>
+  </div>
+
   <main class="content">
 
 
-    <div class="balance">
+    <section class="balance">
       <div class="balance-content">
         <h1 class="section-title balance-title">Balance</h1>
         <i class="fas fa-balance-scale balance-icon"></i>
         <p class="balance-total">$0</p>
       </div>
-    </div>
+    </section>
 
 
-    <div class="table">
+    <section class="table">
       <h1 class="table-title">Budget Report</h1>
       <table class="table-content">
         <thead class="table-head">
@@ -32,32 +40,37 @@
         </thead>
         <tbody class="table-body"></tbody>
       </table>
-    </div>
+    </section>
 
-    <div class="budget-and-expenses budgetExpBox">
+    <section class="budget-and-expenses budgetExpBox">
       <div class="overlay">
         <div class="box">
-          <div class="box-section budget">
+
+          <section class="box-section budget">
             <h1 class="section-title">Budget</h1>
             <input type="number" class="section-input budget-input">
-            <button class="section-button blue-button budgetEditBtn" disabled>Edit</button>
+            <p class="section-msg budget-msg">No blank field/Just numbers are allow</p>
+            <button class="section-button blue-button budgetEditBtn btnInactive" disabled>Edit</button>
             <button class="section-button green-button budgetAddBtn">Add</button>
-          </div>
-          <div class="box-section expenses">
+          </section>
+
+          <section class="box-section expenses">
             <h1 class="section-title">Expenses</h1>
             <p class="section-label">Item</p>
             <input type="text" class="section-input item-input">
             <p class="section-label">Price</p>
             <input type="number" class="section-input price-input">
+            <p class="section-msg expenses-msg">No blank field/Just numbers are allow</p>
             <button class="section-button blue-button expensesClearBtn">Clear</button>
             <button class="section-button green-button expensesAddBtn">Add</button>
-          </div>
+          </section>
+
           <button class="close-budget-and-expenses-btn section-button close-box-btn">
             Close
           </button>
         </div>
       </div>
-    </div>
+    </section>
 
     <button class="add-item-btn">
       <i class="fas fa-plus-circle add-item-icon"></i>

@@ -4,7 +4,7 @@ A Budget Web App where the user can add/delete expenses.
 
 ## Online Version
 
-You can see the online version of it [here](https://personal-budget.vercel.app/)
+You can see the online version of it [here](https://personal-budget.vercel.app/).
 
 ## Built With
 

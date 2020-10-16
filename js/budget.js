@@ -6,8 +6,10 @@ const personalBudget = {
 
   //General Variables
   budgetInput: document.querySelector('.budget-input'),
+  budgetMsg: document.querySelector('.budget-msg'),
   expensesItemInput: document.querySelector('.item-input'),
   expensesPriceInput: document.querySelector('.price-input'),
+  expensesMsg: document.querySelector('.expense-msg'),
 
   //Mobile Method
   displayItemBox() {
@@ -32,13 +34,18 @@ const personalBudget = {
     }
   },
 
-
   budgetSection() {
-    let editBtn = document.querySelector('.budgetEditBtn');
-    let addBtn = document.querySelector('.budgetAddBtn');
+    const editBtn = document.querySelector('.budgetEditBtn');
+    const addBtn = document.querySelector('.budgetAddBtn');
+    const msgSection = document.querySelector('.budget-msg');
 
     addBtn.addEventListener('click', () => {
+      if(this.budgetInput.value == '') return msgSection.classList.add('showMsgError');
+
+      msgSection.classList.remove('showMsgError');
       this.budgetInput.disabled = true;
+      addBtn.classList.add('btnInactive');
+      editBtn.classList.remove('btnInactive');
       editBtn.disabled = false;
       addBtn.disabled = true;
       this.balanceUpdate();
@@ -47,22 +54,33 @@ const personalBudget = {
     editBtn.addEventListener('click', () => {
       this.budgetInput.disabled = false;
       this.budgetInput.focus();
+      addBtn.classList.remove('btnInactive');
+      editBtn.classList.add('btnInactive');
       editBtn.disabled = true;
       addBtn.disabled = false;
     })
   },
 
   expensesSection() {
-    let clearBtn = document.querySelector('.expensesClearBtn');
-    let addBtn = document.querySelector('.expensesAddBtn');
-    let tableBody = document.querySelector('.table-body');
-
+    const clearBtn = document.querySelector('.expensesClearBtn');
+    const addBtn = document.querySelector('.expensesAddBtn');
+    const tableBody = document.querySelector('.table-body');
+    const msg = document.querySelector('.expenses-msg');
+    
     addBtn.addEventListener('click', () => {
-      let addLineToTable = this.createTableLine();
-      tableBody.appendChild(addLineToTable);
-      this.clearInputs();
-      this.deleteTableLine();
-      this.balanceUpdate();
+
+      if (this.expensesItemInput.value == '' || this.expensesPriceInput.value == '')  {
+        return msg.classList.add ('showMsgError');
+      }
+
+      if (tableBody.childElementCount < 21) {
+        msg.classList.remove ('showMsgError');
+        let addLineToTable = this.createTableLine();
+        tableBody.appendChild(addLineToTable);
+        this.clearInputs();
+        this.deleteTableLine();
+        this.balanceUpdate();
+      } else {return;}
     });
 
     clearBtn.addEventListener('click', this.clearInputs);

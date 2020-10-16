@@ -1,3 +1,11 @@
+:root {
+  --green-color: #60DE55;
+  --blue-color: #10ADED;
+  --black-color: #200;
+  --white-color: #FEE;
+  --red-color: #DB0B32;
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -12,7 +20,10 @@ html {
 body {
   font-family: 'Ubuntu', sans-serif;
   line-height: 1.8;
+  position: relative;
 }
+
+.video {display: none;}
 
 main {position: relative;}
 
@@ -34,7 +45,11 @@ main {position: relative;}
   padding-left: .5rem;
   width: 90%;
   margin: auto;
+  border: .1rem solid var(--black-color);
+  border-radius: .5rem;
 }
+
+.section-msg {display: none;}
 
 .section-label {
   font-size: 1.5rem;
@@ -54,16 +69,20 @@ main {position: relative;}
   margin: auto;
   border-radius: .5rem;
   cursor: pointer;
+  transition: all .5s;
+  border: .1rem solid var(--black-color);
 }
+
+.section-button:hover {box-shadow: 0 0 1rem 0 var(--black-color)}
 
 .blue-button {
   grid-column: 1/2;
-  background-color: blue;
+  background-color: var(--blue-color);
 }
 
 .green-button {
   grid-column: 2/-1;
-  background-color: green;
+  background-color: var(--green-color);
 }
 
 .overlay {
@@ -72,7 +91,7 @@ main {position: relative;}
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 
@@ -81,7 +100,7 @@ main {position: relative;}
 .balance {
   width: 100%;
   height: 6rem;
-  background-color: orange;
+  background: linear-gradient(to top, #0dcc6c, #38ef7d);
 }
 
 .balance-content {
@@ -89,6 +108,7 @@ main {position: relative;}
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  border-bottom: .1rem solid var(--black-color);
 }
 
 .balance-icon {
@@ -105,7 +125,9 @@ main {position: relative;}
 .table {
   width: 100vw;
   height: calc(100vh - 6rem);
-  background-color: #aaa;
+  background-image: url('../img/table-bg.jpg');
+  background-position: center;
+  background-size: cover;
 }
 .table-title {
   font-size: 2.5rem;
@@ -130,7 +152,7 @@ main {position: relative;}
 }
 
 .table-head-tr {text-transform: uppercase; font-weight: 700}
-.table-body-tr:nth-child(odd) {background-color: #fff;}
+.table-body-tr:nth-child(odd) {background-color: var(--white-color);}
 .td-trash-icon {cursor: pointer;}
 
 
@@ -168,24 +190,27 @@ main {position: relative;}
 
 .close-box-btn {
   width: 90%;
-  background-color: red;
+  background: linear-gradient(to bottom, #ed213a, #93291e);
   border-radius: 0;
   margin: 0;
   cursor: pointer;
+  color: var(--black-color);
 }
 
 /*-- BUDGET --*/
 .budget {
   width: 90%;
   height: 20rem;
-  background-color: aqua;
+  background: linear-gradient(to top, #0dcc6c, #38ef7d);
+  border: .1rem solid var(--black-color);
 }
 
 /*-- EXPENSES --*/
 .expenses {
   width: 90%;
   height: 30rem;
-  background-color: purple;
+  background: linear-gradient(to top, #2193b0, #6dd5ed);
+  border: .1rem solid var(--black-color);
 }
 
 
@@ -228,6 +253,17 @@ main {position: relative;}
 
 
 @media(min-width: 1200px) {
+  body {overflow: hidden;}
+
+  .video {
+    display: block;
+    opacity: 0.3;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    object-fit: cover;
+  }
+
   .content {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
@@ -236,11 +272,15 @@ main {position: relative;}
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .balance {
     grid-area: balance;
-    background-color: lightcoral;
+    background: rgba(0, 0, 0, 0.7);
     width: 100%;
     height: 100%;
     display: flex;
@@ -251,6 +291,10 @@ main {position: relative;}
   .balance-content {
     flex-direction: column;
     justify-content: space-around;
+    background-image: url('../img/balance-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    border-bottom: none;
   }
   
   .balance-icon {display: block;}
@@ -261,7 +305,7 @@ main {position: relative;}
     border-radius: .5rem;
     align-self: center;
     justify-self: center;
-    background-color: aqua;
+    box-shadow: 0 0 .5rem var(--black-color);
   }
   
   .budget-and-expenses {
@@ -271,6 +315,20 @@ main {position: relative;}
     top: initial;
     width: 100%;
     height: 100%;
+  }
+
+  .budget {
+    background-image: url('../img/budget-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    border: none;
+  }
+
+  .expenses {
+    background-image: url('../img/expenses-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    border: none;
   }
   
   .overlay {display: block;}
@@ -284,12 +342,13 @@ main {position: relative;}
     height: 100vh;
     align-self: center;
     justify-self: center;
+    background-image: url('../img/table-bg.jpg');
+    background-position: center;
+    background-size: cover;
   }
 }
 
-@media(min-width: 1600px) {
-  .balance-content, .budget, .expenses {width: 90%;}
-}
+@media(min-width: 1600px) {.balance-content, .budget, .expenses {width: 90%;}}
 
 
 
@@ -299,4 +358,15 @@ main {position: relative;}
   transition: all .5s;
 }
 
+.showMsgError {
+  display: block;
+  grid-column: 1/-1;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--red-color);
+  margin: auto;
+  font-weight: 700;
+}
+
+.btnInactive {pointer-events: none;}
 .deleteLine {opacity: 0;}
