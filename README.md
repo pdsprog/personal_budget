@@ -1,6 +1,6 @@
 # Budget Web App
 
-A Budget Web App where the user can add/delete expense.
+A Budget Web App where the user can add/delete expenses.
 
 ## Online Version
 
@@ -10,7 +10,7 @@ You can see the online version of it [here](https://psbudget.netlify.app/)
 
 * HTML
 * CSS
-* Vanilla JavaScript
+* JavaScript
 
 ## Authors
 
@@ -18,4 +18,4 @@ You can see the online version of it [here](https://psbudget.netlify.app/)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/pdsprog/personal_budget/blob/main/LICENSE) file for details.
