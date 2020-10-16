@@ -222,15 +222,16 @@ main {position: relative;}
   justify-content: center;
   width: 6rem;
   height: 6rem;
+  background-color: var(--white-color);
   border: none;
   border-radius: 50%;
   padding: 1rem;
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 2rem;
   right: 1rem;
 }
 
-.add-item-icon {font-size: 5.5rem}
+.add-item-icon {font-size: 5rem; color: var(--red-color);}
 
 
 
