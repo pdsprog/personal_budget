@@ -1,0 +1,302 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 1.8;
+}
+
+main {position: relative;}
+
+
+/*-- GLOBAL CLASSES*/
+
+.section-title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  grid-column: 1/-1;
+  text-align: center;
+}
+
+.section-input {
+  grid-column: 1/-1;
+  height: 4rem;
+  font-size: 1.7rem;
+  padding-left: .5rem;
+  width: 90%;
+  margin: auto;
+}
+
+.section-label {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  grid-column: 1/-1;
+  margin: auto;
+}
+
+.section-button {
+  border: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 80%;
+  margin: auto;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.blue-button {
+  grid-column: 1/2;
+  background-color: blue;
+}
+
+.green-button {
+  grid-column: 2/-1;
+  background-color: green;
+}
+
+.overlay {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/*-- BALANCE --*/
+
+.balance {
+  width: 100%;
+  height: 6rem;
+  background-color: orange;
+}
+
+.balance-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.balance-icon {
+  font-size: 4.5rem;
+  padding-right: 1rem;
+  display: none;
+}
+.balance-title {padding: 0 1rem;}
+.balance-total {font-size: 3rem; padding: 0 1rem;}
+
+
+
+/*-- TABLE --*/
+.table {
+  width: 100vw;
+  height: calc(100vh - 6rem);
+  background-color: #aaa;
+}
+.table-title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  padding: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+.table-content, .table-head, .table-body {width: 100%;}
+
+.table-head-tr, .table-body-tr {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 4rem;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  transition: all .5s;
+}
+
+.table-head-tr {text-transform: uppercase; font-weight: 700}
+.table-body-tr:nth-child(odd) {background-color: #fff;}
+.td-trash-icon {cursor: pointer;}
+
+
+
+/*-- BUDGET AND EXPENSES --*/
+
+.budget-and-expenses {
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: all .5s;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: transparent;
+  width: 100vw;
+  height: 100%;
+  margin: auto;
+}
+
+.box-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.close-box-btn {
+  width: 90%;
+  background-color: red;
+  border-radius: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+/*-- BUDGET --*/
+.budget {
+  width: 90%;
+  height: 20rem;
+  background-color: aqua;
+}
+
+/*-- EXPENSES --*/
+.expenses {
+  width: 90%;
+  height: 30rem;
+  background-color: purple;
+}
+
+
+
+/*-- ADD BUTTON --*/
+.add-item-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  border: none;
+  border-radius: 50%;
+  padding: 1rem;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1rem;
+}
+
+.add-item-icon {font-size: 5.5rem}
+
+
+
+/*-- MEDIA QUERY --*/
+@media(min-width: 375px) {
+  .budget {height: 25rem;}
+  .expenses {height: 35rem;}
+  .close-box-btn {height: 5rem}
+}
+
+@media(min-width: 768px) {
+  .balance {height: 8rem;}
+  .section-title, .table-title {font-size: 3rem;}
+  .section-label, .section-input {font-size: 1.8rem;}
+  .section-button {width: 60%; font-size: 1.7rem;}
+  .close-box-btn {width: 90%; font-size: 1.7rem;}
+  .table-head-tr, .table-body-tr {font-size: 1.8rem;}
+  .box {width: 75vw; height: 75%;}
+}
+
+
+@media(min-width: 1200px) {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: "budget table balance";
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .balance {
+    grid-area: balance;
+    background-color: lightcoral;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .balance-content {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .balance-icon {display: block;}
+
+  .balance-content, .budget, .expenses {
+    width: 95%; 
+    height: 30rem; 
+    border-radius: .5rem;
+    align-self: center;
+    justify-self: center;
+    background-color: aqua;
+  }
+  
+  .budget-and-expenses {
+    grid-area: budget;
+    transform: translateX(0);
+    position: initial;
+    top: initial;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .overlay {display: block;}
+  .overlay, .box {width: 100%; height: 100%;}
+  .close-box-btn {display: none;}
+  .add-item-btn {display: none;}
+
+  .table {
+    grid-area: table;
+    width: 100%;
+    height: 100vh;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+@media(min-width: 1600px) {
+  .balance-content, .budget, .expenses {width: 90%;}
+}
+
+
+
+/*-- JAVASCRIPT CLASSES*/
+.displayBox {
+  transform: translateX(0);
+  transition: all .5s;
+}
+
+.deleteLine {opacity: 0;}

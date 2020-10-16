@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Personal Budget || Paulo da Silva</title>
+</head>
+<body>
+  <main class="content">
+
+
+    <div class="balance">
+      <div class="balance-content">
+        <h1 class="section-title balance-title">Balance</h1>
+        <i class="fas fa-balance-scale balance-icon"></i>
+        <p class="balance-total">$0</p>
+      </div>
+    </div>
+
+
+    <div class="table">
+      <h1 class="table-title">Budget Report</h1>
+      <table class="table-content">
+        <thead class="table-head">
+          <tr class="table-head-tr">
+            <td>Item</td>
+            <td>Price($)</td>
+            <td>Delete</td>
+          </tr>
+        </thead>
+        <tbody class="table-body"></tbody>
+      </table>
+    </div>
+
+    <div class="budget-and-expenses budgetExpBox">
+      <div class="overlay">
+        <div class="box">
+          <div class="box-section budget">
+            <h1 class="section-title">Budget</h1>
+            <input type="number" class="section-input budget-input">
+            <button class="section-button blue-button budgetEditBtn" disabled>Edit</button>
+            <button class="section-button green-button budgetAddBtn">Add</button>
+          </div>
+          <div class="box-section expenses">
+            <h1 class="section-title">Expenses</h1>
+            <p class="section-label">Item</p>
+            <input type="text" class="section-input item-input">
+            <p class="section-label">Price</p>
+            <input type="number" class="section-input price-input">
+            <button class="section-button blue-button expensesClearBtn">Clear</button>
+            <button class="section-button green-button expensesAddBtn">Add</button>
+          </div>
+          <button class="close-budget-and-expenses-btn section-button close-box-btn">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <button class="add-item-btn">
+      <i class="fas fa-plus-circle add-item-icon"></i>
+    </button>
+
+  </main>
+
+
+  <script src="js/budget.js"></script>
+</body>
+</html>
