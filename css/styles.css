@@ -4,6 +4,7 @@
   --black-color: #200;
   --white-color: #FEE;
   --red-color: #DB0B32;
+  --grey-color: #DEDEDE;
 }
 
 *, *::before, *::after {
@@ -152,7 +153,7 @@ main {position: relative;}
 }
 
 .table-head-tr {text-transform: uppercase; font-weight: 700}
-.table-body-tr:nth-child(odd) {background-color: var(--white-color);}
+.table-body-tr:nth-child(odd) {background-color: var(--grey-color);}
 .td-trash-icon {cursor: pointer;}
 
 
