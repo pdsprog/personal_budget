@@ -320,6 +320,8 @@ main {position: relative;}
     height: 100%;
   }
 
+  .box {justify-content: space-around;}
+
   .budget {
     background-image: url('../img/budget-bg.jpg');
     background-position: center;
@@ -332,6 +334,7 @@ main {position: relative;}
     background-position: center;
     background-size: cover;
     border: none;
+    margin: 0;
   }
   
   .overlay {display: block;}
