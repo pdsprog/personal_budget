@@ -92,7 +92,7 @@ main {position: relative;}
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
@@ -101,7 +101,8 @@ main {position: relative;}
 .balance {
   width: 100%;
   height: 6rem;
-  background: linear-gradient(to top, #0dcc6c, #38ef7d);
+  /* background: linear-gradient(to top, #0dcc6c, #38ef7d); */
+  background: linear-gradient(to top, #f2994a, #f2c94c);
 }
 
 .balance-content {
@@ -174,7 +175,7 @@ main {position: relative;}
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   background-color: transparent;
   width: 100vw;
   height: 100%;
@@ -221,26 +222,26 @@ main {position: relative;}
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 6rem;
-  height: 6rem;
-  background-color: var(--white-color);
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--black-color);
   border: none;
   border-radius: 50%;
   padding: 1rem;
   position: absolute;
-  bottom: 2rem;
+  bottom: 5rem;
   right: 1rem;
 }
 
-.add-item-icon {font-size: 5rem; color: var(--red-color);}
+.add-item-icon {font-size: 5rem; color: var(--blue-color);}
 
 
 
 /*-- MEDIA QUERY --*/
 @media(min-width: 375px) {
-  .budget {height: 25rem;}
-  .expenses {height: 35rem;}
-  .close-box-btn {height: 5rem}
+  .budget {height: 25rem; border-radius: .5rem;}
+  .expenses {height: 35rem; margin: 1rem auto; border-radius: .5rem;}
+  .close-box-btn {height: 5rem; border-radius: .5rem;}
 }
 
 @media(min-width: 768px) {
@@ -250,7 +251,7 @@ main {position: relative;}
   .section-button {width: 60%; font-size: 1.7rem;}
   .close-box-btn {width: 90%; font-size: 1.7rem;}
   .table-head-tr, .table-body-tr {font-size: 1.8rem;}
-  .box {width: 75vw; height: 75%;}
+  .box {width: 60vw; height: 75%;}
 }
 
 
